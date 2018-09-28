@@ -5,14 +5,42 @@
 // numberJoinerWhile(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
+function numberJoinerWhile(startIndex, endIndex) {
+  numsJoined = ''
+  if (startIndex !== endIndex) {
+    while (startIndex <= endIndex) {
+      if (startIndex !== endIndex) {
+        numsJoined += startIndex + '_'
+        startIndex++
+      } else if (startIndex === endIndex) {
+        numsJoined += startIndex
+        startIndex++
+      }
+    }
+    return numsJoined
+  } else {
+    return numsJoined + startIndex
+  }
+}
 
+//
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
-
-
-
+function numberJoinerFor(startIndex, endIndex) {
+  numsJoined = ''
+  if (startIndex !== endIndex) {
+    for (var i = startIndex; i < endIndex; i++) {
+      numsJoined += startIndex + "_"
+      startIndex++
+    }
+    numsJoined += endIndex
+    return numsJoined
+  } else {
+    return numsJoined + startIndex
+  }
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",
 // except it takes an optional third argument specifying the separator between the numbers.
@@ -21,3 +49,18 @@
 // numberJoinerFancy(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerFancy(1, 5, '~') --> 1~2~3~4~5
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
+
+function numberJoinerFancy(startIndex, endIndex, separator) {
+  if (!separator) separator = '_'
+    numsJoined = ''
+    if (startIndex !== endIndex) {
+      for (var i = startIndex; i < endIndex; i++) {
+        numsJoined += startIndex + separator
+        startIndex++
+      }
+      numsJoined += endIndex
+      return numsJoined
+    } else {
+      return numsJoined + startIndex
+    }
+  }

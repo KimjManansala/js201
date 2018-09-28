@@ -10,6 +10,19 @@
 // tipAmount(100, 'good') --> 20
 // tipAmount(40, 'fair') --> 6
 
+function tipAmount (bill, tip){ //calculate the tip ammount
+    if (tip === 'good'){
+        return bill * .2    //will return 20% of bill
+    }else if(tip === 'fair'){
+        return bill * .15   //will return 15% of the bill
+    }else if (tip === 'bad'){
+        return bill *.1 //will return 10% of the bill
+    }else{
+        return bill //assuming user will not leave tip
+    }
+
+}
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,7 +33,9 @@
 // Examples:
 // totalAmount(100, 'good') --> 120
 // totalAmount(40, 'fair') --> 46
-
+function totalAmount (bill, tip){   //function adding tipAmount to bill
+    return bill + tipAmount(bill, tip)
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,3 +46,6 @@
 // Examples:
 // splitAmount(100, 'good', 5) --> 24
 // splitAmount(40, 'fair', 2) --> 23
+function splitAmount (bill, tip, people){
+    return (totalAmount(bill, tip) / people)
+}
