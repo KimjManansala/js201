@@ -740,8 +740,8 @@ if (allSyntaxValid) {
   describe('Leetspeak', checkLeetspeak)
   describe('Long-long Vowels', checkLongLongVowels)
   describe('Number Arrays', checkNumberArrays)
-  describe('Matrix Math', checkMatrixMath)
+  //describe('Matrix Math', checkMatrixMath)
   describe('Rock Paper Scissors', checkRockPaperScissors)
-  describe('Tic Tac Toe', checkTicTacToe)
+  //describe('Tic Tac Toe', checkTicTacToe)
   destroyModuleFiles()
 }

@@ -24,12 +24,35 @@
 //   ])
 // null
 
-const emptyBoard = [
-    [null, null, null]
-    [null, null, null]
-    [null, null, null]
-]
 
-function ticTacToe (){
+const boardArray = [null, null, null, null, null, null, null, null, null]
+const boardString = '******** \n'
+' | ' + boardArray[0] + ' | ' + boardArray[1] + ' | ' + boardArray[2] + ' | \n'
+' | ' + boardArray[3] + ' | ' + boardArray[4] + ' | ' + boardArray[5] + ' | \n'
+' | ' + boardArray[6] + ' | ' + boardArray[7] + ' | ' + boardArray[8] + ' | \n'
+"********"
 
+//This is what is will look like
+// "******** \n"
+// " |' '|' '|' '| \n "         
+// " |' '|' '|' '| \n"
+// " |' '|' '|' '| \n"
+// "********"
+
+function ticTacToe(board) {
+  buildBoard()
+}
+
+function checkWinner(boardArray) {
+  if (boardArray[0] === 'X' && boardArray[1] === 'X' && boardArray[2]) return 'X' //across top
+  else if (boardArray[3] === 'X' && boardArray[4] === 'X' && boardArray[5]) return 'X' //across middle
+  else if ((boardArray[6] === 'X' && boardArray[7] === 'X' && boardArray[8])) return 'X' //across bottom
+  else if ((boardArray[0] === 'X' && boardArray[4] === 'X' && boardArray[8])) return 'X' //diagonol
+  else if ((boardArray[2] === 'X' && boardArray[4] === 'X' && boardArray[6])) return 'X' //diagonol
+  else if ((boardArray[0] === 'X' && boardArray[3] === 'X' && boardArray[6])) return 'X' //down left
+  else if ((boardArray[1] === 'X' && boardArray[4] === 'X' && boardArray[7])) return 'X' //down middle
+}
+
+function buildBoard() {
+  console.log(boardString)
 }

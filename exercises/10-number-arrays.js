@@ -3,7 +3,7 @@
 // Example:
 // sumNumbers([1, 4, 8]) --> 13
 function sumNumbers (nums){
-    sum = 0
+    var sum = 0
     for( var i = 0; i <nums.length; i++){
         sum +=nums[i]
     }
@@ -19,7 +19,7 @@ function sumNumbers (nums){
 // positiveNumbers([1, 2, 3]) --> [1, 2, 3]
 // positiveNumbers([-1, -2, -3]) --> []
 function positiveNumbers (nums){
-    posNums = []
+    var posNums = []
     for( var i = 0; i <nums.length; i++){
         if(nums[i] >= 0){
             posNums.push(nums[i])

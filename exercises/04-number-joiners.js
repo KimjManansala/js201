@@ -51,7 +51,10 @@ function numberJoinerFor(startIndex, endIndex) {
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
 
 function numberJoinerFancy(startIndex, endIndex, separator) {
+  if (separator === undefined) separator = '_'
+  if (typeof separator !== 'string') separator = '_'
   if (!separator) separator = '_'
+  
     numsJoined = ''
     if (startIndex !== endIndex) {
       for (var i = startIndex; i < endIndex; i++) {
@@ -64,3 +67,5 @@ function numberJoinerFancy(startIndex, endIndex, separator) {
       return numsJoined + startIndex
     }
   }
+
+  numberJoinerFancy(1, 2, {foo: 'bar'}) // 1_2
